@@ -1,17 +1,16 @@
 package com.cursor.homework3;
 
-// i put all the methods in one file for the sake of ease of review.
+import com.cursor.homework3.tasks.*;
 
-import com.cursor.homework3.com.cursor.homework3.tasks.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.*;
-import java.util.stream.Collectors;
 
-public class TasksRunner {
+ class TasksRunner {
 
-    List<Task> tasksList;
+    private List<Task> tasksList;
 
-    public TasksRunner() {
+        TasksRunner() {
         tasksList = new ArrayList<>();
         tasksList.add(new SortDescending());
         tasksList.add(new ReplacingInAList());
@@ -20,7 +19,7 @@ public class TasksRunner {
         tasksList.add(new FilterListByDivisibility());
     }
 
-    public void runAllTasks() {
+    void runAllTasks() {
         for (Task task : tasksList) {
             task.executeTask();
         }
